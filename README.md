@@ -12,7 +12,7 @@ Mac, map the mouse once, and the chord works everywhere.
 ## Install
 
 ```bash
-git clone <your-repo-url> ~/.hammerspoon-setup
+git clone https://github.com/ANcpLua/hammerspoon-setup.git ~/.hammerspoon-setup
 cd ~/.hammerspoon-setup
 ./install.sh
 ```
