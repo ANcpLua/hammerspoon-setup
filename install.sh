@@ -3,8 +3,8 @@
 #
 # Turns a bare macOS machine into the exact setup in one command:
 #   Homebrew → Hammerspoon + Ghostty → Claude Code → symlinked config + Fable prompt.
-# Idempotent: safe to run repeatedly. The mouse (a ⌃⌥⇧F12 onboard macro) is the portable
-# TRIGGER; this script installs the ENGINE that trigger needs on each Mac.
+# Idempotent: safe to run repeatedly. The trigger is Ctrl + middle-click on any three-button
+# mouse; a ⌃⌥⇧F12 hotkey is bound to the same launcher for programmable mice (optional).
 #
 # Usage:  ./install.sh          # run from inside the cloned repo (e.g. ~/.hammerspoon-setup)
 set -euo pipefail
@@ -89,7 +89,7 @@ fi
 cat <<'NEXT'
 
 ────────────────────────────────────────────────────────────────────────────
- Almost there — three manual steps a script can't do for you:
+ Almost there — two manual steps a script can't do for you:
 
  1. GRANT PERMISSIONS to Hammerspoon (required for the global mouse trigger):
       System Settings → Privacy & Security →
@@ -101,13 +101,12 @@ cat <<'NEXT'
       claude
       (needs a Claude Pro / Max / Team / Enterprise or Console account)
 
- 3. MAP THE MOUSE (Logitech G HUB → Onboard Memory mode):
-      Assign a button's ONBOARD macro to the keychord:  Ctrl + Alt + Shift + F12
-      Onboard mode stores the chord on the mouse, so it fires on ANY Mac
-      running this config — no G HUB needed on the target machine.
+ Then: Ctrl + middle-click → a Ghostty window opens running Claude Code as
+ Opus 4.8 (1M context) with the Fable prompt, and the windows you launch this
+ way auto-tile into equal columns.
 
- Then: Ctrl + middle-click (or your mapped button) → a Ghostty window opens
- running Claude Code as Opus 4.8 (1M context) with the Fable prompt, and the
- windows you launch this way auto-tile into equal columns.
+ Optional: the same launcher is also bound to the Ctrl+Alt+Shift+F12 keychord,
+ so a programmable mouse or keyboard macro can trigger it from a dedicated
+ button. See "Optional: trigger it from a programmable mouse" in README.md.
 ────────────────────────────────────────────────────────────────────────────
 NEXT

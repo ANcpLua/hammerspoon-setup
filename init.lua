@@ -85,10 +85,9 @@ ccLauncher = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, functio
 end)
 ccLauncher:start()
 
--- Portable trigger: a rare keychord. In G HUB → Onboard Mode, map a mouse button's
--- ONBOARD macro to ⌃⌥⇧F12 and it fires this SAME launcher on any Mac running this config.
--- The mouse carries the keychord (travels anywhere); this binding turns it into the launch
--- (the mouse itself can never run the command).
+-- Optional second trigger: a deliberately rare keychord, bound to the SAME launcher, so a
+-- programmable mouse / keyboard macro can fire it from a dedicated button. Nothing above
+-- depends on this -- Ctrl + middle-click works on any three-button mouse without it.
 hs.hotkey.bind({ "ctrl", "alt", "shift" }, "F12", function() spawnAndTile() end)
 
 -- Debug helper: hs -c "return ccStatus()"
